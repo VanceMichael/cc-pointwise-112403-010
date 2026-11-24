@@ -19,11 +19,13 @@ test("本地页面能辨认每个来源及其记录", async () => {
   assert.ok(page.includes(material.name));
   assert.ok(page.includes("虚构合成演练资料"));
   for (const feed of material.feeds) {
-    assert.ok(page.includes(`data-source="${feed.id}"`));
-    assert.ok(page.includes(feed.label));
+    assert.ok(page.includes(`/source/${feed.id}`));
+    const source = await readFile(new URL(`../fixtures/source-${feed.id}.html`, import.meta.url), "utf8");
+    assert.ok(source.includes(`data-source="${feed.id}"`));
+    assert.ok(source.includes(feed.label));
     for (const record of feed.records) {
       for (const value of Object.values(record)) {
-        if (value !== null) assert.ok(page.includes(String(value)));
+        if (value !== null) assert.ok(source.includes(String(value)));
       }
     }
   }
