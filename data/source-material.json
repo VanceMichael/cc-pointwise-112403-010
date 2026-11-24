@@ -1,0 +1,30 @@
+{
+  "name": "载人飞行任务阶段公告与地面验证回执采集簿",
+  "material_nature": "本地合成演练资料",
+  "description": "仅供本地开发和回归，记录不代表真实机构、交易或观测。",
+  "records": {
+    "missions": [
+      {
+        "id": "M-1",
+        "vehicle": "LV-X",
+        "phase": "ground-rehearsal",
+        "revision": 2
+      }
+    ],
+    "interfaces": [
+      {
+        "id": "IF-3",
+        "configuration": "CFG-8",
+        "state": "verified"
+      }
+    ],
+    "receipts": [
+      {
+        "interface": "IF-3",
+        "configuration": "CFG-8",
+        "revoked": false
+      }
+    ],
+    "notes": "完全虚构的任务阶段、配置与合成回执。"
+  }
+}
