@@ -1,27 +1,14 @@
-# 载人飞行任务阶段公告与地面验证回执采集簿
+# 发射窗口调整下的关键物资到场采集核对
 
-这是一个围绕合成演练资料开发的数据采集项目。项目尚未提供业务采集或办理能力。
+这是一个使用合成网页和记录开展本地开发的数据采集项目。业务采集、关系判断和办理结果尚未实现。
 
-## 目录
+## 内容
 
-- `data/source-material.json` 保存合成来源数据及其背景。
-- `fixtures/source.html` 是可由 HTTP 获取的合成发布页。
-- `fixtures/server.mjs` 仅提供来源演练页，不包含采集或业务处理能力。
-- `test/materials.test.js` 检查资料与来源页的对应关系。
-- `package.json` 声明 Node.js 测试入口，不依赖第三方包。
+- `data/source-material.json` 按来源保存虚构演练记录。
+- `fixtures/source.html` 展示对应来源资料。
+- `fixtures/server.mjs` 提供本地来源页。
+- `test/materials.test.js` 检查演练资料与来源页。
 
 ## 运行
 
-需要 Node.js 22 或更新版本。运行现有检查：
-
-```sh
-npm test
-```
-
-启动本地合成来源页：
-
-```sh
-npm run sources
-```
-
-启动后服务会打印本次使用的页面地址；也可通过 `SOURCE_PORT` 指定本地端口，默认由系统分配可用端口。服务只提供演练资料，不实现采集结果、归属判断或业务状态。
+需要 Node.js 22 或更新版本。执行 `npm test` 运行基线检查，执行 `npm run sources` 启动本地来源页。

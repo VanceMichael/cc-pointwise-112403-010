@@ -1,30 +1,113 @@
 {
-  "name": "载人飞行任务阶段公告与地面验证回执采集簿",
+  "name": "发射窗口调整下的关键物资到场采集核对",
   "material_nature": "本地合成演练资料",
-  "description": "仅供本地开发和回归，记录不代表真实机构、交易或观测。",
-  "records": {
-    "missions": [
-      {
-        "id": "M-1",
-        "vehicle": "LV-X",
-        "phase": "ground-rehearsal",
-        "revision": 2
-      }
-    ],
-    "interfaces": [
-      {
-        "id": "IF-3",
-        "configuration": "CFG-8",
-        "state": "verified"
-      }
-    ],
-    "receipts": [
-      {
-        "interface": "IF-3",
-        "configuration": "CFG-8",
-        "revoked": false
-      }
-    ],
-    "notes": "完全虚构的任务阶段、配置与合成回执。"
-  }
+  "description": "资料中的机构、项目、交易、合同和回执均为虚构，仅用于本地开发与回归。",
+  "feeds": [
+    {
+      "id": "schedule",
+      "label": "任务窗口与保障需求",
+      "records": [
+        {
+          "mission": "SZ-24",
+          "source": "任务发布页",
+          "revision": 1,
+          "window_local": "2026-11-25 08:18",
+          "timezone": "Asia/Shanghai",
+          "published_at": "2026-11-24T09:06+08:00"
+        },
+        {
+          "mission": "SZ-24",
+          "source": "任务计划页",
+          "revision": 2,
+          "window_local": "2026-11-25 10:18",
+          "timezone": "Asia/Shanghai",
+          "change_reason": "合成计划调整",
+          "published_at": "2026-11-24T18:00+08:00"
+        },
+        {
+          "mission": "SZ-24",
+          "item": "BAT-7",
+          "required_at_pad_by": "2026-11-25 06:00",
+          "compatible_substitute": "BAT-7B"
+        },
+        {
+          "mission": "SZ-24",
+          "item": "AIR-2",
+          "required_at_pad_by": "2026-11-25 07:00",
+          "compatible_substitute": null
+        }
+      ]
+    },
+    {
+      "id": "carrier",
+      "label": "承运状态页面",
+      "records": [
+        {
+          "carrier": "北方航空货运",
+          "tracking": "C-818",
+          "item": "battery-case",
+          "mission_ref": "M24-B",
+          "eta_local": "2026-11-25 04:40",
+          "timezone": "Asia/Shanghai",
+          "state": "in-transit",
+          "updated_at": "2026-11-24T19:30+08:00"
+        },
+        {
+          "carrier": "北方航空货运",
+          "tracking": "C-819",
+          "item": "air-filter",
+          "mission_ref": "M24-A",
+          "eta_local": "2026-11-25 04:10",
+          "timezone": "Asia/Shanghai",
+          "state": "received-at-terminal",
+          "updated_at": "2026-11-24T20:00+08:00"
+        },
+        {
+          "carrier": "西部快运",
+          "tracking": "C-901",
+          "item": "battery-backup",
+          "mission_ref": "M24-B",
+          "eta_local": "2026-11-25 03:50",
+          "timezone": "Asia/Shanghai",
+          "state": "in-transit",
+          "updated_at": "2026-11-24T19:10+08:00"
+        }
+      ]
+    },
+    {
+      "id": "ground",
+      "label": "货站截载与场内验收",
+      "records": [
+        {
+          "terminal": "酒泉货站",
+          "tracking": "C-818",
+          "cutoff_local": "2026-11-25 04:00",
+          "timezone": "Asia/Shanghai",
+          "state": "not-checked-in"
+        },
+        {
+          "terminal": "酒泉货站",
+          "tracking": "C-819",
+          "cutoff_local": "2026-11-25 04:30",
+          "timezone": "Asia/Shanghai",
+          "state": "checked-in"
+        },
+        {
+          "mission": "SZ-24",
+          "item": "AIR-2",
+          "tracking": "C-819",
+          "handoff": "H-71",
+          "state": "accepted",
+          "accepted_at": "2026-11-25T05:10+08:00"
+        },
+        {
+          "mission": "SZ-24",
+          "item": "BAT-7B",
+          "tracking": "C-901",
+          "handoff": null,
+          "state": "awaiting-inspection"
+        }
+      ]
+    }
+  ]
 }
